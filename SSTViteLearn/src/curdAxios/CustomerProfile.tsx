@@ -104,7 +104,7 @@ const CustomerSignup = () => {
 //   const handleUpdate = () => {
 //     console.log("Update:", formData);
 //   };
-function updatePicAndSetPreview(event:React.ChangeEvent<HTMLFormElement>)
+function updatePicAndSetPreview(event: React.ChangeEvent<HTMLFormElement>)
   {
     let selFileObj=event.target.files[0];
      setFormData((prev)=>(
@@ -193,7 +193,7 @@ function updatePicAndSetPreview(event:React.ChangeEvent<HTMLFormElement>)
           
           <div className="mt-4 flex gap-4">
 
-         <input type="file" required name="profilepic" className=" w-full rounded-lg border px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500" onChange={updatePicAndSetPreview}
+         <input type="file" required name="profilepic" className=" w-full rounded-lg border px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500" onChange={updatePicAndSetPreview as any}
           />
         
             <img src={prev} alt="" className="w-[200px] h-28 rounded-lg border px-3 py-2 outline-none focus:ring-2 focus:ring-blue-500"
