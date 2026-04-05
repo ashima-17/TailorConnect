@@ -12,7 +12,7 @@
 // const [tailorList, setTailorList] = useState<any[]>([]);
 
 // // async function doGetCities() {
-// //   let url = "http://localhost:2007/tailor/getcities";
+// //   let url = "https://tailor-connect-back.vercel.app/tailor/getcities";
 // //   let response = await axios.get(url);
 // //   if (response.data.status) {
 // //     setCityList(response.data.cities);
@@ -22,7 +22,7 @@
 
 
 // async function doGetCities() {
-//     let url = "http://localhost:2007/tailor/getcities";
+//     let url = "https://tailor-connect-back.vercel.app/tailor/getcities";
 //     let response = await axios.post(url);
 //     if (response.data.cities) {
 //       setCityList(response.data.cities);
@@ -36,7 +36,7 @@
       
 //   // ---------------------------------------get Speciality----------------------------------------------
 //   // async function doGetSpeciality(gender: string) {
-//   //   let url = "http://localhost:2007/tailor/getspeciality";
+//   //   let url = "https://tailor-connect-back.vercel.app/tailor/getspeciality";
 //   //   let response = await axios.post(url, { category:category  }, {
 //   //     headers: { "Content-Type": "application/x-www-form-urlencoded" }
 //   //   });
@@ -46,7 +46,7 @@
 //   // }
   
 //    async function doGetSpeciality(category: string) {
-//   let url = "http://localhost:2007/tailor/getspeciality";
+//   let url = "https://tailor-connect-back.vercel.app/tailor/getspeciality";
 //   let response = await axios.post(url, { category: category }, {
 //     headers: { "Content-Type": "application/x-www-form-urlencoded" }
 //   });
@@ -56,7 +56,7 @@
 // }
 // async function findRecord()
 // {
-//    let url="http://localhost:2007/tailor/tailorfullrecord";
+//    let url="https://tailor-connect-back.vercel.app/tailor/tailorfullrecord";
 //      let response3= await axios.post(url,{shopCity:selectedCity,category:category,speciality:selectedSpeciality},{headers: { "Content-Type": "application/x-www-form-urlencoded" }});
    
 //     //  resp.data.doc.dos=resp.data.doc.dos.split("T")[0];
@@ -216,7 +216,7 @@ function FindTailor() {
   const [tailorList, setTailorList] = useState<any[]>([]);
 
   async function doGetCities() {
-    let url = "http://localhost:2007/tailor/getcities";
+    let url = "https://tailor-connect-back.vercel.app/tailor/getcities";
     let token=localStorage.getItem("token")
     
 
@@ -231,7 +231,7 @@ function FindTailor() {
   }, []);
 
   async function doGetSpeciality(category: string) {
-    let url = "http://localhost:2007/tailor/getspeciality";
+    let url = "https://tailor-connect-back.vercel.app/tailor/getspeciality";
      let token=localStorage.getItem("token")
     let response = await axios.post(url, { category: category }, {
       headers: { "Content-Type": "application/x-www-form-urlencoded",'authorization' : `Bearer ${token}` }
@@ -242,7 +242,7 @@ function FindTailor() {
   }
 
   async function findRecord() {
-    let url = "http://localhost:2007/tailor/tailorfullrecord";
+    let url = "https://tailor-connect-back.vercel.app/tailor/tailorfullrecord";
       let token=localStorage.getItem("token")
     let response3 = await axios.post(url, { shopCity: selectedCity, category: category, speciality: selectedSpeciality }, {
       headers: { "Content-Type": "application/x-www-form-urlencoded",'authorization' : `Bearer ${token}` }

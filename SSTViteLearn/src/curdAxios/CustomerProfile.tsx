@@ -82,7 +82,7 @@ const CustomerSignup = () => {
   const handleSubmit =  async (e: React.FormEvent<HTMLFormElement>) => {
      e.preventDefault();
     console.log(formData);
-    let url="http://localhost:2007/customer/customerprofilesignup";
+    let url="https://tailor-connect-back.vercel.app/customer/customerprofilesignup";
     let token=localStorage.getItem("token")
 
     let frmData=new FormData();
@@ -128,7 +128,7 @@ function updatePicAndSetPreview(event:React.ChangeEvent<HTMLFormElement>)
   const handleUpdate =  async () => {
    
     console.log(formData);
-    let url="http://localhost:2007/customer/customerprofileupdate";
+    let url="https://tailor-connect-back.vercel.app/customer/customerprofileupdate";
      let token=localStorage.getItem("token");
     let frmData=new FormData();
     frmData.append("emailid",formData.emailid);
@@ -147,7 +147,7 @@ function updatePicAndSetPreview(event:React.ChangeEvent<HTMLFormElement>)
   };
   async function doFind()
   {
-     let url="http://localhost:2007/customer/customerprofilesearch";
+     let url="https://tailor-connect-back.vercel.app/customer/customerprofilesearch";
       let token=localStorage.getItem("token");
      let response2= await axios.post(url,{emailid:formData.emailid},{headers: { "Content-Type": "application/x-www-form-urlencoded" ,'authorization' : `Bearer ${token}`}});
    

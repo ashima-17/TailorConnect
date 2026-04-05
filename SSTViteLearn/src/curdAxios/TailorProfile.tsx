@@ -67,7 +67,7 @@
 //   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 //     e.preventDefault();
 //        console.log(formData);
-//        let url="http://localhost:2007/tailor/tailorprofilesignup";
+//        let url="https://tailor-connect-back.vercel.app/tailor/tailorprofilesignup";
 //        let frmData=new FormData();
 //        frmData.append("emailid",formData.emailid);
 //        frmData.append("name",formData.name);
@@ -136,7 +136,7 @@
 //     }
 //         async function doFetch()
 //       {
-//         let url="http://localhost:2007/tailor/tailorprofilesearch";
+//         let url="https://tailor-connect-back.vercel.app/tailor/tailorprofilesearch";
 //          let response1= await axios.post(url,{emailid:formData.emailid},{headers: { "Content-Type": "application/x-www-form-urlencoded" }});
 //           alert(JSON.stringify(response1));
 //           if(response1.data.doc)
@@ -152,7 +152,7 @@
 
 //     const doUpdate =  async () => {
 //     console.log(formData);
-//     let url="http://localhost:2007/tailor/tailorprofileupdate";
+//     let url="https://tailor-connect-back.vercel.app/tailor/tailorprofileupdate";
 //     let frmData=new FormData();
 //      frmData.append("emailid",formData.emailid);
 //        frmData.append("name",formData.name);
@@ -197,7 +197,7 @@
 
 //   try {
 //     const response = await axios.post(
-//       "http://localhost:2007/aadhaar/extractaadhaar",
+//       "https://tailor-connect-back.vercel.app/aadhaar/extractaadhaar",
 //       aadhaarFormData
 //     );
    
@@ -629,7 +629,7 @@ const ProfileSignup = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
        console.log(formData);
-       let url="http://localhost:2007/tailor/tailorprofilesignup";
+       let url="https://tailor-connect-back.vercel.app/tailor/tailorprofilesignup";
        let token = localStorage.getItem("token")
        let frmData=new FormData();
        frmData.append("emailid",formData.emailid);
@@ -691,7 +691,7 @@ const ProfileSignup = () => {
 
         async function doFetch()
       {
-        let url="http://localhost:2007/tailor/tailorprofilesearch";
+        let url="https://tailor-connect-back.vercel.app/tailor/tailorprofilesearch";
         let token = localStorage.getItem("token")
          let response1= await axios.post(url,{emailid:formData.emailid},{headers: { "Content-Type": "application/x-www-form-urlencoded" ,'authorization' : `Bearer ${token}`}});
           alert(JSON.stringify(response1));
@@ -706,7 +706,7 @@ const ProfileSignup = () => {
 
     const doUpdate =  async () => {
     console.log(formData);
-    let url="http://localhost:2007/tailor/tailorprofileupdate";
+    let url="https://tailor-connect-back.vercel.app/tailor/tailorprofileupdate";
     let token = localStorage.getItem("token")
     let frmData=new FormData();
      frmData.append("emailid",formData.emailid);
@@ -742,7 +742,7 @@ const ProfileSignup = () => {
 //   aadhaarFormData.append("aadhaarFile", file);
 //   try {
 //     const response = await axios.post(
-//       "http://localhost:2007/aadhaar/extractaadhaar",
+//       "https://tailor-connect-back.vercel.app/aadhaar/extractaadhaar",
 //       aadhaarFormData
 //     );
 //     console.log("OCR RESPONSE:", response.data);
@@ -779,7 +779,7 @@ async function handleExtractAadharFront(fileParam: any) {
   const aadhaarFormData = new FormData();
   aadhaarFormData.append("aadhaarFile", fileParam);
   try {
-    const response = await axios.post("http://localhost:2007/aadhaar/extractaadhaarfront", aadhaarFormData);
+    const response = await axios.post("https://tailor-connect-back.vercel.app/aadhaar/extractaadhaarfront", aadhaarFormData);
     const gender = response.data.obj.gender?.toLowerCase();
 const mappedGender = gender === "female" ? "women" : gender === "male" ? "men" : "";
     if (response.data.status) {
@@ -800,7 +800,7 @@ async function handleExtractAadharBack(fileParam: any) {
   const aadhaarFormData = new FormData();
   aadhaarFormData.append("aadhaarFileBack", fileParam);
   try {
-    const response = await axios.post("http://localhost:2007/aadhaar/extractaadhaarback", aadhaarFormData);
+    const response = await axios.post("https://tailor-connect-back.vercel.app/aadhaar/extractaadhaarback", aadhaarFormData);
     console.log("Back response:", response.data);
     if (response.data.status) {
       setFormData(prev => ({

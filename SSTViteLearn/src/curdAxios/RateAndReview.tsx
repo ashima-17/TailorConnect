@@ -40,7 +40,7 @@ function App() {
 
   // Fetch tailor name onBlur
   async function fetchTailor() {
-    let url="http://localhost:2007/review/tailornamesearch";
+    let url="https://tailor-connect-back.vercel.app/review/tailornamesearch";
      let token=localStorage.getItem("token")
          let response1= await axios.post(url,{contact:formData.contact},{headers: { "Content-Type": "application/x-www-form-urlencoded",'authorization' : `Bearer ${token}` }});
           alert(JSON.stringify(response1));
@@ -69,7 +69,7 @@ function App() {
        
       
       console.log(formData);
-      let url="http://localhost:2007/review/tailorreview"
+      let url="https://tailor-connect-back.vercel.app/review/tailorreview"
       let token=localStorage.getItem("token")
 
       let response=await axios.post(url, formData, {headers: { "Content-Type": "application/x-www-form-urlencoded",'authorization' : `Bearer ${token}` }});

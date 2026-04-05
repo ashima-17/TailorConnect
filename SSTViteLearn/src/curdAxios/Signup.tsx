@@ -86,7 +86,7 @@
 //      if (!validate()) return;
     
 //     console.log(formData);
-//     let url="http://localhost:2007/user/signup"
+//     let url="https://tailor-connect-back.vercel.app/user/signup"
 //     let response=await axios.post(url, formData, {headers: { "Content-Type": "application/x-www-form-urlencoded" }});
 //      alert(JSON.stringify(response))
 //     //  if (!validate()) return;
@@ -268,7 +268,7 @@ const Signup = () => {
     e.preventDefault();
     if (!validate()) return;
     console.log(formData);
-    let url = "http://localhost:2007/user/signup";
+    let url = "https://tailor-connect-back.vercel.app/user/signup";
     let response = await axios.post(url, formData, {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });

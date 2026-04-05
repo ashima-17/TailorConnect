@@ -67,7 +67,7 @@
 //     if (!validate()) return;
 //     // console.log("Login Data:", formData);
 //     // alert("Login submitted!");
-//       let url="http://localhost:2007/user/login"
+//       let url="https://tailor-connect-back.vercel.app/user/login"
 //         let response1=await axios.post(url, {emailid:formData.emailid,password:formData.password}, {headers: { "Content-Type": "application/x-www-form-urlencoded" }});
 //          alert(JSON.stringify(response1))
 //          const userType = response1.data.userType;
@@ -201,7 +201,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    let url = "http://localhost:2007/user/login";
+    let url = "https://tailor-connect-back.vercel.app/user/login";
     let response1 = await axios.post(
       url,
       { emailid: formData.emailid, password: formData.password },
