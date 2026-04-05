@@ -32,7 +32,8 @@ async  function doTailorSignup(req,resp)
      if (req.files.profilepic) {
             fileName = req.files.profilepic.name;
 
-            let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+            // let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+            let uploadsFolderPath="/tmp/"+fileName;
 
            await   req.files.profilepic.mv(uploadsFolderPath);
 
@@ -44,8 +45,8 @@ async  function doTailorSignup(req,resp)
          if (req.files.aadhaarFile) {
             fileName1 = req.files.aadhaarFile.name;
 
-            let uploadsFolderPath1 = path.join(__dirname, "..", "uploads", fileName1);
-
+            // let uploadsFolderPath1 = path.join(__dirname, "..", "uploads", fileName1);
+              let uploadsFolderPath1="/tmp/"+fileName;
             await  req.files.aadhaarFile.mv(uploadsFolderPath1);
              await cloudinary.uploader.upload(uploadsFolderPath1).then(  function (picUrlResult1) {
                 var fileNameUrlOnServer = picUrlResult1.secure_url;
@@ -59,8 +60,8 @@ async  function doTailorSignup(req,resp)
      if (req.files.aadhaarFileBack) {
             fileName2 = req.files.aadhaarFileBack.name;
 
-            let uploadsFolderPath2 = path.join(__dirname, "..", "uploads", fileName2);
-
+            // let uploadsFolderPath2 = path.join(__dirname, "..", "uploads", fileName2);
+let uploadsFolderPath2="/tmp/"+fileName;
                await req.files.aadhaarFileBack.mv(uploadsFolderPath2);
              await cloudinary.uploader.upload(uploadsFolderPath2).then(  function (picUrlResult2) {
                 var fileNameUrlOnServer = picUrlResult2.secure_url;
@@ -193,7 +194,8 @@ async function doTailorUpdate(req, resp) {
      let fileName2="nopic.jpg"
     if (req.files && req.files.profilepic) {
          fileName = req.files.profilepic.name;
-        let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        // let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        let uploadsFolderPath="/tmp/"+fileName;
         await req.files.profilepic.mv(uploadsFolderPath);  
         await cloudinary.uploader.upload(uploadsFolderPath).then(function (picUrlResult) {
             var fileNameUrlOnServer = picUrlResult.secure_url;  
@@ -206,7 +208,8 @@ async function doTailorUpdate(req, resp) {
     
     if (req.files && req.files.aadhaarFile) {
          fileName1 = req.files.aadhaarFile.name;
-        let uploadsFolderPath1 = path.join(__dirname, "..", "uploads", fileName1);
+        // let uploadsFolderPath1 = path.join(__dirname, "..", "uploads", fileName1);
+        let uploadsFolderPath1="/tmp/"+fileName;
         await req.files.aadhaarFile.mv(uploadsFolderPath1);  
         await cloudinary.uploader.upload(uploadsFolderPath1).then(function (picUrlResult1) {
             var fileNameUrlOnServer = picUrlResult1.secure_url;  
@@ -217,7 +220,8 @@ async function doTailorUpdate(req, resp) {
     }
     if (req.files && req.files.aadhaarFileBack) {
          fileName2 = req.files.aadhaarFileBack.name;
-        let uploadsFolderPath2 = path.join(__dirname, "..", "uploads", fileName2);
+        // let uploadsFolderPath2 = path.join(__dirname, "..", "uploads", fileName2);
+        let uploadsFolderPath2="/tmp/"+fileName;
         await req.files.aadhaarFileBack.mv(uploadsFolderPath2);  
         await cloudinary.uploader.upload(uploadsFolderPath2).then(function (picUrlResult2) {
             var fileNameUrlOnServer = picUrlResult2.secure_url;  
