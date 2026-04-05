@@ -351,7 +351,8 @@ async function doExtractAadharFront(req, resp) {
     try {
         let file = req.files.aadhaarFile;  
         let fileName = file.name;
-        let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        // let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        let uploadsFolderPath="/tmp/"+fileName;
        await file.mv(uploadsFolderPath);
          console.log("Uploading to cloudinary...");
 
@@ -374,7 +375,8 @@ async function doExtractAadharBack(req, resp) {
     try {
         let file = req.files.aadhaarFileBack;  
         let fileName = file.name;
-        let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        // let uploadsFolderPath = path.join(__dirname, "..", "uploads", fileName);
+        let uploadsFolderPath="/tmp/"+fileName;
        await file.mv(uploadsFolderPath);
         console.log("Uploading to cloudinary...");
 
