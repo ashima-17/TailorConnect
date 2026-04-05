@@ -51,7 +51,8 @@ console.log("**********");
     if(req.files&&req.files.profilepic)
     {
      fileName=req.files.profilepic.name;
-    let uploadsFolderPath=path.join(__dirname,"..","uploads",fileName);
+    // let uploadsFolderPath=path.join(__dirname,"..","uploads",fileName);
+    let uploadsFolderPath="/tmp/"+fileName;
      await req.files.profilepic.mv(uploadsFolderPath);
     //****************Sending to cloudinary server******************* */
         await cloudinary.uploader.upload(uploadsFolderPath).then(function(picUrlResult){
