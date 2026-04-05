@@ -4,6 +4,8 @@
   "description": "",
   "main": "servermvc.js",
   "scripts": {
+    "start": "node servermvc.js",
+    "dev": "nodemon servermvc.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
