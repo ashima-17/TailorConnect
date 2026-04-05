@@ -32,6 +32,7 @@ app.use("/review",reviewRouter);
 app.listen(2007,()=>{
     console.log("Server started at port no:"+2007);
 })
+module.exports=app;
 // app.get("/",(req,resp)=>
 // {
 //     resp.send("its home12 page");
