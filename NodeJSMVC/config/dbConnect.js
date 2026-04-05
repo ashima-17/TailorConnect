@@ -5,7 +5,8 @@ function connectToMongoDB()
     //    let url="mongodb://localhost:27017/2026jan";
        let url="mongodb+srv://AshimaArora:Admin123@cluster0.m0t966e.mongodb.net/2026jan";
 
-    mongoose.connect(url).then(()=>
+    mongoose.connect(url,{serverSelectionTimeoutMS: 30000,
+    socketTimeoutMS: 45000,}).then(()=>
     {
         console.log("Connected to MongoDB");
     }).catch((err)=>
