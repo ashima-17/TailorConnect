@@ -100,7 +100,7 @@ function App() {
 
           <div className="w-1/2">
             <label className="block text-sm font-medium mb-1">
-              Tailor Mobile Number
+              Tailor Contact
             </label>
             <input
               type="text" name="contact"
