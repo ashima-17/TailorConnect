@@ -179,9 +179,9 @@ export default function TailorLandingPage() {
 
         </div>
       </section>
-{/* Made By Section
+{/* Made By Section */}
 
- <section className="py-16 px-8 bg-white">
+ {/* <section className="py-16 px-8 bg-white">
   <h3 className="text-3xl font-bold text-center text-blue-700 mb-10">Made By</h3>
   <div className="max-w-sm mx-auto bg-blue-50 rounded-2xl shadow-lg overflow-hidden">
     <div className="flex justify-center pt-8">
