@@ -612,7 +612,7 @@ const initialObject={
 const ProfileSignup = () => {
   const [formData, setFormData] = useState<FormDataType>(initialObject);
   const[prev,setPrev]=useState<string|null>(null);
-  const[prev1,setPrev1]=useState<string|null>(null);
+  const[prev1,setPrev1]=useState<string|null>(null);  
   const[prev2,setPrev2]=useState<string|null>(null);
     
   const handleChange = (
